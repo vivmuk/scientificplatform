@@ -1,0 +1,207 @@
+/* Custom styles for dark theme */
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+    --agent-blue: #3b82f6;
+    --agent-red: #ef4444;
+    --agent-green: #10b981;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Visualization styles */
+.node circle {
+    fill: var(--primary-color);
+    stroke: var(--secondary-color);
+    stroke-width: 2px;
+}
+
+.node text {
+    fill: #e5e7eb;
+    font-size: 12px;
+}
+
+.link {
+    stroke: #4b5563;
+    stroke-width: 1.5px;
+}
+
+/* Card hover effects */
+.bg-gray-800 {
+    transition: transform 0.2s ease-in-out;
+}
+
+.bg-gray-800:hover {
+    transform: translateY(-2px);
+}
+
+/* Code block styling */
+pre code {
+    font-family: 'Fira Code', monospace;
+    color: #e5e7eb;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Agent orchestration section styles */
+.bg-blue-800.bg-opacity-30 {
+    background-color: rgba(30, 64, 175, 0.3);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.bg-red-900.bg-opacity-30 {
+    background-color: rgba(127, 29, 29, 0.3);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.bg-red-800.bg-opacity-30 {
+    background-color: rgba(153, 27, 27, 0.3);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.bg-blue-700.bg-opacity-30 {
+    background-color: rgba(29, 78, 216, 0.3);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Improved progress bar styling */
+.rounded-full {
+    transition: width 1s ease-in-out;
+}
+
+.bg-blue-500.h-2\.5.rounded-full {
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
+/* Tournament visualization styling */
+#tournament-visualization {
+    background-color: rgba(31, 41, 55, 0.4);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+#tournament-visualization svg text {
+    font-weight: 500;
+}
+
+#tournament-visualization .link {
+    stroke: rgba(148, 163, 184, 0.6);
+    stroke-width: 2;
+    stroke-dasharray: 5, 3;
+}
+
+#tournament-visualization text {
+    fill: white;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#tournament-visualization g:hover circle {
+    filter: brightness(1.2);
+    transition: all 0.3s ease;
+}
+
+/* Spinning animation for sync icons */
+.fa-sync {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Agent box hover effects */
+.bg-red-900.bg-opacity-30, .bg-blue-800.bg-opacity-30, .bg-blue-700.bg-opacity-30 {
+    transition: all 0.3s ease;
+}
+
+.bg-red-900.bg-opacity-30:hover, .bg-blue-800.bg-opacity-30:hover, .bg-blue-700.bg-opacity-30:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Connector line styling */
+.agent-connector {
+    position: relative;
+}
+
+.agent-connector::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: rgba(59, 130, 246, 0.5);
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Add pulse animation to final SCP node */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#tournament-visualization g:nth-child(11) circle {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Tournament round label styles */
+.round-label {
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.process-label {
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.2));
+    font-family: 'Inter', sans-serif;
+}
+
+/* Add a background highlight for process labels */
+.process-label {
+    background-color: rgba(15, 23, 42, 0.6);
+    padding: 2px 6px;
+    border-radius: 4px;
+} 
